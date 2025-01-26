@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use(cors({
     
-    origin: "https://poetpoetry.netlify.app/",
+    origin: "https://poetpoetry.netlify.app",
     credentials: true
 }))
 
