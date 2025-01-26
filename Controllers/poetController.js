@@ -58,7 +58,7 @@ const Login = async (req, res) => {
 
     const token = jwt.sign({ id: poet._id }, 'secret', { expiresIn: '1h' });
 
-    res.status(200).cookie('token', token, { httpOnly: true }).json({ message: 'Login successful', name: poet.name, avatar: poet.avatar });
+    res.status(200).cookie('token', token, { httpOnly: true, secure: true }).json({ message: 'Login successful', name: poet.name, avatar: poet.avatar });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Something went wrong' });
